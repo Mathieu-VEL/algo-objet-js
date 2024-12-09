@@ -1,134 +1,166 @@
 <!doctype html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Exo d'Algo(Part 4) - #01 - Les élèves</title>
     <link href="./style.css" rel="stylesheet" />
     <script type="text/javascript" src="./eleve.js"></script>
 </head>
+
 <body>
-<div class="card">
-    <p class="h6 font-weight-bold text-center">#01 - Les élèves</p>
-    <div class="instructions">
-        <p class="text-secondary">Le script que vous avez enregistré dans <em>eleve.js</em>(répertoire js) est chargé par ce fichier html 
-            grace à la ligne :<br />
-            <code>&lt;script type="text/javascript" src="./js/eleve.js"&gt;&lt;/script&gt;</code><br />
-            La classe (ou fonction de construction) que vous avez créé(e) est donc utilisable depuis ce fichier html.</p>
-        <ul class="text-secondary">
-            <li>En fin de ce fichier html, dans la zone encadrée par les balises &lt;script&gt;...&lt;/script&gt;, <strong>écrire les instructions 
-                qui permettent</strong> :
-                <ol>
-                    <li>
-                        De créer les objets élèves identifiés par <em>pierreDupont</em>, <em>marieFontaine</em> et <em>johnHunter</em>.<br>
-                        Vous leur attribuerez le nom et le prénom qui semblent en accord avec 
-                        le nom de la variable choisi pour les identifier.<br>
-                        Vous leur attribuerez la classe (Kercode, CDA, CDUI ou BTS SIO) de votre choix.<br>
-                        <p class="text-danger">Les objets élèves devront être rangés dans le tableau du groupe des élèves ;  
-                            ce tableau (groupeEleves) est déjà déclaré et initialisé vide.</p>
-                    </li>
-                    <li>
-                        De lire le prénom de l'objet pierreDupont et de l'afficher dans la console,
-                    </li>
-                    <li>
-                        De lire la classe de marieFontaine et de l'afficher dans la console,
-                    </li>
-                    <li>
-                        D'attribuer à marieFontaine et à pierreDupont leur première note (choisie librement) en maths et d'attribuer
-                        à JohnHunter un 18 en algorithmique (Bon travail !)
-                    </li>
-                    <li>
-                        D'attribuer à tous les élèves connus leur première note en algorithmique ; la note de chaque élève 
-                        sera proposée aléatoirement (le formateur est fantaisiste !) :
-                        <ul>
-                            <li>Écrire une fonction, nommée <em>genererNote</em>qui génère et retourne un nombre aléatoire entre 0 et 20.<br>
-                                (indice : voir la méthode random de l'objet global JavaScript Math)</li>
-                            <li>En utilisant la fonction <em>genererNote</em>, attribuer une note aléatoire à chaque élève (une note différente 
-                                par élève) par itération sur le groupe des élèves... (Ne voyez-vous pas une boucle là-dessous ?)</li>
-                        </ul>
-                    </li>
-                    <li>
-                        De calculer la moyenne de la classe (c-à-d du groupe) en algorithmique et de l'afficher dans la console 
-                        et/ou par la fonction <em>alert()</em>.
-                    </li>
-                </ol>
-            </li>
-            <li>
-                Ouvrir la console (dans votre navigateur ou depuis le débugueur de VSCode) et recharger votre code.<br>
-                Pour rappel, les instructions ayant été écrites hors de toute fonction, sont exécutées au chargement de la page !!!
-                <p class="text-success">Tous les résultats devraient être dans la console !</p>
-                <p>N'hésitez pas à utiliser cette console pour interroger les objets, 
-                pour débuguer ou par curiosité !</p>
-            </li>
-        </ul>
-    </div>
+    <div class="card">
+        <p class="h6 font-weight-bold text-center">#01 - Les élèves</p>
+        <div class="instructions">
+            <p class="text-secondary">Le script que vous avez enregistré dans <em>eleve.js</em>(répertoire js) est
+                chargé par ce fichier html
+                grace à la ligne :<br />
+                <code>&lt;script type="text/javascript" src="./js/eleve.js"&gt;&lt;/script&gt;</code><br />
+                La classe (ou fonction de construction) que vous avez créé(e) est donc utilisable depuis ce fichier
+                html.
+            </p>
+            <ul class="text-secondary">
+                <li>En fin de ce fichier html, dans la zone encadrée par les balises &lt;script&gt;...&lt;/script&gt;,
+                    <strong>écrire les instructions
+                        qui permettent</strong> :
+                    <ol>
+                        <li>
+                            De créer les objets élèves identifiés par <em>pierreDupont</em>, <em>marieFontaine</em> et
+                            <em>johnHunter</em>.<br>
+                            Vous leur attribuerez le nom et le prénom qui semblent en accord avec
+                            le nom de la variable choisi pour les identifier.<br>
+                            Vous leur attribuerez la classe (Kercode, CDA, CDUI ou BTS SIO) de votre choix.<br>
+                            <p class="text-danger">Les objets élèves devront être rangés dans le tableau du groupe des
+                                élèves ;
+                                ce tableau (groupeEleves) est déjà déclaré et initialisé vide.</p>
+                        </li>
+                        <li>
+                            De lire le prénom de l'objet pierreDupont et de l'afficher dans la console,
+                        </li>
+                        <li>
+                            De lire la classe de marieFontaine et de l'afficher dans la console,
+                        </li>
+                        <li>
+                            D'attribuer à marieFontaine et à pierreDupont leur première note (choisie librement) en
+                            maths et d'attribuer
+                            à JohnHunter un 18 en algorithmique (Bon travail !)
+                        </li>
+                        <li>
+                            D'attribuer à tous les élèves connus leur première note en algorithmique ; la note de chaque
+                            élève
+                            sera proposée aléatoirement (le formateur est fantaisiste !) :
+                            <ul>
+                                <li>Écrire une fonction, nommée <em>genererNote</em>qui génère et retourne un nombre
+                                    aléatoire entre 0 et 20.<br>
+                                    (indice : voir la méthode random de l'objet global JavaScript Math)</li>
+                                <li>En utilisant la fonction <em>genererNote</em>, attribuer une note aléatoire à chaque
+                                    élève (une note différente
+                                    par élève) par itération sur le groupe des élèves... (Ne voyez-vous pas une boucle
+                                    là-dessous ?)</li>
+                            </ul>
+                        </li>
+                        <li>
+                            De calculer la moyenne de la classe (c-à-d du groupe) en algorithmique et de l'afficher dans
+                            la console
+                            et/ou par la fonction <em>alert()</em>.
+                        </li>
+                    </ol>
+                </li>
+                <li>
+                    Ouvrir la console (dans votre navigateur ou depuis le débugueur de VSCode) et recharger votre
+                    code.<br>
+                    Pour rappel, les instructions ayant été écrites hors de toute fonction, sont exécutées au chargement
+                    de la page !!!
+                    <p class="text-success">Tous les résultats devraient être dans la console !</p>
+                    <p>N'hésitez pas à utiliser cette console pour interroger les objets,
+                        pour débuguer ou par curiosité !</p>
+                </li>
+            </ul>
+        </div>
 
-    <button class="button" type="button" onclick="groupeEleves">envoyer</button>
-
-    
-<script type="text/javascript">
-
-    let groupeEleves = [];
-    // -----------------------------------------------------
-    /*
-     * --- Courte description de la fonction ICI ---
-     * Paramètres : --- paramètres ICI si il y en a ---
-     *  
-     * Retour : --- retour de la fonction ICI ---
-     */
-    function genererNote () { 
-        // CODE HERE
-        return(20*Math.random());
-    }
+        <button class="button" type="button" onclick="groupeEleves">envoyer</button>
 
 
-    // -----------------------------------------------------
+        <script type="text/javascript">
 
-    // création des 3 élèves et rangement dans le tableau des élèves
-    let pierreDupont = new Eleve("Dupont","Pierre","Kerrcode");
-    groupeEleves.push(pierreDupont);
-    let johnHunter = new Eleve("Hunter","john","Kerrcode");
-    groupeEleves.push(johnHunter);
-    let marieFontaine = new Eleve("Fontaine","marie","Kerrcode");
-    groupeEleves.push(pierreDupont);
-
-
-    // lecture et affichage du prénom de l'objet pierreDupont
-    console.log(pierreDupont.prenom);
-
-    console.log(johnHunter.prenom);
-    console.log(marieFontaine.prenom);
-
-    // lecture et affichage de la classe de marieFontaine
-    
-    console.log(marieFontaine.classe);
-
-    // attribution de notes en maths
-
-    marieFontaine.notes.math.push(15);
-
-    console.log(marieFontaine.notes);
+            let groupeEleves = [];
+            // -----------------------------------------------------
+            /*
+             * --- Courte description de la fonction ICI ---
+             * Paramètres : --- paramètres ICI si il y en a ---
+             *  
+             * Retour : --- retour de la fonction ICI ---
+             */
+            function genererNote() {
+                // CODE HERE
+                return parseFloat((20 * Math.random(1).toFixed(2)));
+            }
 
 
+            // -----------------------------------------------------
+
+            // création des 3 élèves et rangement dans le tableau des élèves
+            let pierreDupont = new Eleve("Dupont", "Pierre", "Kerrcode");
+            groupeEleves.push(pierreDupont);
+            let johnHunter = new Eleve("Hunter", "john", "Kerrcode");
+            groupeEleves.push(johnHunter);
+            let marieFontaine = new Eleve("Fontaine", "marie", "Kerrcode");
+            groupeEleves.push(pierreDupont);
 
 
-    // attribution des notes en mathématique (marieFontaine et pierreDupont)
-    // attribution de la note de 18 à johnHunter
-    
-    for(let i = groupeEleves; i < groupeEleves.lenght; i++){
-        console.log(groupeEleves[i]);
-    }
+            // lecture et affichage du prénom de l'objet pierreDupont
+            console.log(pierreDupont.prenom);
 
-    // ajout d'une note aléatoire en algorithmique pour chaque élève
+            console.log(johnHunter.prenom);
+            console.log(marieFontaine.prenom);
+
+            // lecture et affichage de la classe de marieFontaine
+
+            //console.log(marieFontaine.classe);
+
+            // attribution de notes en maths
+
+            //marieFontaine.notes.math.push(15);
+
+            //console.log(marieFontaine.notes);
+
+            // attribution des notes en mathématique (marieFontaine et pierreDupont)
+
+            marieFontaine.notes.algorythme.push(10.5);
+            pierreDupont.notes.algorythme.push(5.5);
+
+            // attribution de la note de 18 à johnHunter
+
+            johnHunter.notes.algorythme.push(18.1);
+
+            // ajout d'une note aléatoire en algorithmique pour chaque élève
+
+            marieFontaine.notes.algorythme.push(genererNote());
+            johnHunter.notes.algorythme.push(genererNote());
+            pierreDupont.notes.algorythme.push(genererNote());
+            console.log(marieFontaine.prenom + " " + marieFontaine.notes.algorythme);
+            console.log(johnHunter.prenom + " " + johnHunter.notes.algorythme);
+            console.log(pierreDupont.prenom + " " + pierreDupont.notes.algorythme);
 
 
+            // moyenne du groupe en algorithmique
+            function average() {
 
-    // moyenne du groupe en algorithmique
-    
-    
+                let sum = 0;
+                let groupeEleves = moyenne;
 
-</script>
+                for (let i = 0; i < moyenne.length; i++) {
+                    console.log(moyenne[i]);
+                    sum = sum + moyenne[i];
+                }
+                sum = sum / moyenne.length;
+                console.log(sum);
+            }
+
+        </script>
 </body>
+
 </html>
