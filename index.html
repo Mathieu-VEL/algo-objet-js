@@ -129,21 +129,37 @@
 
             // attribution des notes en mathématique (marieFontaine et pierreDupont)
 
-            marieFontaine.notes.algorythme.push(10.5);
-            pierreDupont.notes.algorythme.push(5.5);
+            // marieFontaine.notes.algorithme.push(10.5);
+            // pierreDupont.notes.algorithme.push(5.5);
 
             // attribution de la note de 18 à johnHunter
 
-            johnHunter.notes.algorythme.push(18.1);
+            // johnHunter.notes.algorithme.push(18.1);
 
             // ajout d'une note aléatoire en algorithmique pour chaque élève
 
-            marieFontaine.notes.algorythme.push(genererNote());
-            johnHunter.notes.algorythme.push(genererNote());
-            pierreDupont.notes.algorythme.push(genererNote());
-            console.log(marieFontaine.prenom + " " + marieFontaine.notes.algorythme);
-            console.log(johnHunter.prenom + " " + johnHunter.notes.algorythme);
-            console.log(pierreDupont.prenom + " " + pierreDupont.notes.algorythme);
+            // marieFontaine.notes.algorithme.push(genererNote());
+            // johnHunter.notes.algorithme.push(genererNote());
+            // pierreDupont.notes.algorithme.push(genererNote());
+            // console.log(marieFontaine.prenom + " " + marieFontaine.notes.algorithme);
+            // console.log(johnHunter.prenom + " " + johnHunter.notes.algorithme);
+            // console.log(pierreDupont.prenom + " " + pierreDupont.notes.algorithme);
+
+
+            function noterandome(groupeEleves) {
+                for (let i = 0; i < groupeEleves.length; i++) {
+                    groupeEleves[i].notes.algorithme.push(genererNote());
+                }
+                return groupeEleves;
+            }
+
+
+            // groupeEleves.forEach(eleve => {
+            //     eleve.notes.algorithme.push(genererNote());
+            // })
+
+
+
 
 
             // moyenne du groupe en algorithmique

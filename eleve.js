@@ -3,7 +3,7 @@ class Eleve{
         this.nom = n;
         this.prenom = p;
         this.classe = c;
-        this.notes = {math:[], algorythme:[], javascript:[]};
+        this.notes = {math:[], algorithme:[], javascript:[]};
     }
     bonjour(){
         alert("bonjour, je suis "+this.nom.firstname+this.nom.name+" et j'ai "+this.age+" ans");
