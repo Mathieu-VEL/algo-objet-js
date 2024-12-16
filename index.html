@@ -85,7 +85,9 @@
 
 
         <script type="text/javascript">
+
             let groupeEleves = [];
+
             // -----------------------------------------------------
             /*
              * --- Courte description de la fonction ICI ---
@@ -93,61 +95,92 @@
              *  
              * Retour : --- retour de la fonction ICI ---
              */
+
             function genererNote() {
                 // CODE HERE
                 return parseFloat((20 * Math.random(1).toFixed(2)));
             }
+
             // -----------------------------------------------------
+
             // création des 3 élèves et rangement dans le tableau des élèves
+
             let pierreDupont = new Eleve("Dupont", "Pierre", "Kerrcode");
             groupeEleves.push(pierreDupont);
             let johnHunter = new Eleve("Hunter", "john", "Kerrcode");
             groupeEleves.push(johnHunter);
             let marieFontaine = new Eleve("Fontaine", "marie", "Kerrcode");
             groupeEleves.push(marieFontaine);
+
             // lecture et affichage du prénom de l'objet pierreDupont
+
             console.log(pierreDupont.prenom);
             console.log(johnHunter.prenom);
             console.log(marieFontaine.prenom);
+
             // lecture et affichage de la classe de marieFontaine
-            //console.log(marieFontaine.classe);
+
+            console.log(marieFontaine.classe);
+
             // attribution de notes en maths
-            //marieFontaine.notes.math.push(15);
-            //console.log(marieFontaine.notes);
+
+            marieFontaine.notes.math.push(15);
+
+            console.log(marieFontaine.notes);
+
             // attribution des notes en mathématique (marieFontaine et pierreDupont)
-            // marieFontaine.notes.algorithme.push(10.5);
-            // pierreDupont.notes.algorithme.push(5.5);
+
+            marieFontaine.notes.algorithme.push(10.5);
+            pierreDupont.notes.algorithme.push(5.5);
+
             // attribution de la note de 18 à johnHunter
-            // johnHunter.notes.algorithme.push(18.1);
+
+            johnHunter.notes.algorithme.push(18.1);
+
             // ajout d'une note aléatoire en algorithmique pour chaque élève
-            // marieFontaine.notes.algorithme.push(genererNote());
-            // johnHunter.notes.algorithme.push(genererNote());
-            // pierreDupont.notes.algorithme.push(genererNote());
-            // console.log(marieFontaine.prenom + " " + marieFontaine.notes.algorithme);
-            // console.log(johnHunter.prenom + " " + johnHunter.notes.algorithme);
-            // console.log(pierreDupont.prenom + " " + pierreDupont.notes.algorithme);
-            // function noterandom(tab) {
-            //     for (let i = 0; i < tab.length; i++) {
-            //         tab[i].notes.algorithme.push(genererNote());
-            //     }
-            // }
-            // noterandom(groupeEleves);
-            groupeEleves.forEach(eleve){
-                eleve.notes.algorithme.push(genererNote());
+
+            marieFontaine.notes.algorithme.push(genererNote());
+            johnHunter.notes.algorithme.push(genererNote());
+            pierreDupont.notes.algorithme.push(genererNote());
+
+            console.log(marieFontaine.prenom + " " + marieFontaine.notes.algorithme);
+            console.log(johnHunter.prenom + " " + johnHunter.notes.algorithme);
+            console.log(pierreDupont.prenom + " " + pierreDupont.notes.algorithme);
+
+            function noterandom(tab) {
+                for (let i = 0; i < tab.length; i++) {
+                    tab[i].notes.algorithme.push(genererNote());
+                }
             }
+            noterandom(groupeEleves);
 
             // moyenne du groupe en algorithmique
-            // pierreDupont.average(){
-            //     for (let i = 0; i < average.length; i++) {
-            //         average[i]
-            //     }
-            // }
-
-            function moyenneeleveparmatiere(eleve,matiere){
-                let sum = 0;
-                eleve.notes[algorithme].forEach(notes({sum = sum + notes}))
-                return (sum, eleve.notes[matiere].length).toFixed(2);
+            function ajouterNote(eleve, matiere, note) {
+                eleve.notes[matiere].push(note);
             }
+
+            function moyenneEleve(eleve, matiere) {
+                let sum = 0;
+                eleve.notes[matiere].forEach(note => { sum += note; });
+                if (eleve.notes[matiere].length === 0) return 0;        // Pour éviter la division par 0 (NaN) si pas de note
+                return (sum / (eleve.notes[matiere].length));           // sinon... tout va bien !
+            }
+            // autre écriture proposée par Delphine M. s'appuyant sur la méthode "reduce (voir MDN)"
+            function moyenneEleveBis(eleve, matiere) {
+                const sum = eleve.notes[matiere].reduce(
+                    (accumulator, currentNote) => accumulator + currentNote, // callback 
+                    O);
+                if (eleve.notes[matiere].length === 0) return 0;        // Pour éviter la division par 0 (NaN) si pas de note
+                return (sum / (eleve.notes[matiere].length));           // sinon... tout va bien !
+            }
+
+            function moyenneGroupe(groupe, matiere) {
+                let sum = 0;
+                groupe.forEach(eleve => { sum += moyenneEleve(eleve, matiere); });
+                return (sum / (groupe.length));
+            }
+
+            pierreDupont.bonjour();
 
         </script>
 </body>
