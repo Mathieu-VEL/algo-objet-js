@@ -11,4 +11,7 @@ class Eleve{
         alert("bonjour, je suis "+this.prenom+" "+this.nom+" en classe de "+this.classe+"");
     }
 
+    // addnot(matiere, note){
+    //     this.notes[matiere].push(note);
+    // }
 }
